@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>text 3D</title>
+</head>
+<style>
+  body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+  }
+  .box {
+    display: flex;
+  }
+  .box .inner {
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 4em;
+    font-family: Sans-Serif;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .box .inner:first-child {
+    background-color: #a7ff33;
+    color: #6db80c;
+    transform-origin: right;
+    transform: perspective(100px) rotateY(-15deg);
+  }
+  
+  .box .inner:last-child{
+    background-color: #1f9c00;
+    color: #00c1e8;
+    transform-origin: left;
+    transform: perspective(100px) rotateY(15deg) ;
+  }
+  .box .inner span {
+    position: absolute;
+    animation: marquee 5s linear infinite;
+  }
+  .box .inner:first-child span{
+    animation-delay: 2.5s
+    left: -100%;
+  }
+  @keyframes marquee {
+    from {left: 100%;}
+    to {left: -100%;}
+  }
+</style>
+<body>
+  <div class="box">
+    <div class="inner">
+      <span>STAY Halal Brother</span>
+    </div>
+    <div class="inner">
+      <span>STAY Halal Brother</span>
+    </div>
+  </div>
+</body>
+</html>
